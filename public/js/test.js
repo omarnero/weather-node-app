@@ -6,9 +6,7 @@ const p2 = document.querySelector("#message-2");
 const getData = async (country) => {
   p1.textContent = "Loading ...";
   try {
-    const response = await fetch(
-      `http://localhost:3000/whethar?address=${country}`
-    );
+    const response = await fetch(`/whethar?address=${country}`);
     const data = await response.json();
     const { country: cou, city } = data;
     p1.textContent = cou;
